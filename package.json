@@ -8,6 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "packageManager": "npm@10.5.2",
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom",
+    "next": "$next"
+  },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^4.0.0",
