@@ -126,19 +126,6 @@ const JourneySection = () => {
                   </p>
 
                   {/* Learn More Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`
-                      px-6 py-2 rounded-full text-white font-medium
-                      bg-gradient-to-r ${step.gradient}
-                      transform transition-transform duration-300
-                      opacity-0 group-hover:opacity-95
-                      shadow-md hover:shadow-lg
-                    `}
-                  >
-                    Learn More
-                  </motion.button>
                 </div>
               </div>
 

@@ -26,17 +26,23 @@ export default function Contact() {
                 {
                   icon: "📍",
                   title: "Visit Us",
-                  content: "123 Dental Street, Suite 100, City, State 12345",
+                  content:
+                    "Bole Road, Wello Sefer, Fetle Building, 2nd Floor (next to Medco Bio-Medical College)",
                 },
                 {
                   icon: "📞",
                   title: "Call Us",
-                  content: "+1 (555) 123-4567",
+                  content: "+251 94 183 8383",
+                },
+                {
+                  icon: "📞",
+                  title: "Call Us",
+                  content: "+251 94 783 8383",
                 },
                 {
                   icon: "📧",
                   title: "Email Us",
-                  content: "info@premiumdental.com",
+                  content: "todrsenait@gmail.com",
                 },
               ].map((item, index) => (
                 <motion.div

@@ -186,7 +186,7 @@ export default function Testimonials() {
             </AnimatePresence>
 
             {/* Navigation Arrows */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-4">
+            <div className="absolute top-[40%] -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-4 -mt-10 md:-mt-16">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -197,7 +197,7 @@ export default function Testimonials() {
                   );
                   setIsAutoPlaying(false);
                 }}
-                className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-navy-900 pointer-events-auto hover:bg-[#118c90] transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-navy-900 pointer-events-auto hover:bg-[#118c90] hover:text-white transition-colors"
               >
                 <svg
                   className="w-6 h-6"
@@ -220,7 +220,7 @@ export default function Testimonials() {
                   setActiveIndex((prev) => (prev + 1) % testimonials.length);
                   setIsAutoPlaying(false);
                 }}
-                className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-navy-900 pointer-events-auto hover:bg-[#118c90] transition-colors"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-navy-900 pointer-events-auto hover:bg-[#118c90] hover:text-white transition-colors"
               >
                 <svg
                   className="w-6 h-6"
