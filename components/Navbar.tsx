@@ -204,7 +204,7 @@ export default function Navbar() {
                 transition={{ delay: navItems.length * 0.1 }}
                 className="w-full px-6 py-3 bg-[#118c90] text-navy-900 rounded-lg font-medium
                   hover:bg-[#118c90] transition-colors duration-200"
-                onClick={() => router.push("/book")}
+                onClick={() => router.push("/book-appointment")}
               >
                 Book Appointment
               </motion.button>
