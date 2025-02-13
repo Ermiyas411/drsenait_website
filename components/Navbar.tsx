@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -14,6 +15,7 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const router = useRouter();
   const { scrollYProgress } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -188,7 +190,7 @@ export default function Navbar() {
                 transition={{ delay: navItems.length * 0.1 }}
                 className="w-full px-6 py-3 bg-[#118c90] text-navy-900 rounded-lg font-medium
                   hover:bg-[#118c90] transition-colors duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => router.push("/book")}
               >
                 Book Appointment
               </motion.button>

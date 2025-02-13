@@ -50,14 +50,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="bg-[#118c90] text-navy-900 px-8 py-4 rounded-full font-medium text-lg hover:bg-[#118c90] transition-colors"
             >
-              Book Consultation
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white/10 transition-colors"
-            >
-              Learn More
+              Book Free Consultation
             </motion.button>
           </motion.div>
 
