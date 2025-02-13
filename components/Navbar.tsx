@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useScroll } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { smoothScroll } from "@/utils/smoothScroll";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -23,26 +24,37 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 0);
 
       // Update active section based on scroll position
-      const sections = navItems.map((item) => item.name.toLowerCase());
-      const currentSection = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+      const sections = navItems.map((item) =>
+        document.getElementById(item.href.substring(1))
+      );
+      const scrollPosition = window.scrollY + 100; // Offset for better accuracy
+
+      sections.forEach((section, index) => {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setActiveSection(navItems[index].name.toLowerCase());
+          }
         }
-        return false;
       });
-      if (currentSection) {
-        setActiveSection(currentSection);
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    smoothScroll(href);
+  };
 
   return (
     <>
@@ -78,6 +90,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href.substring(1))}
                   className="relative px-4 py-2 group"
                 >
                   <motion.span
@@ -92,7 +105,7 @@ export default function Navbar() {
                     {activeSection === item.name.toLowerCase() && (
                       <motion.div
                         layoutId="navbar-active"
-                        className="absolute -mt-1 -mx-2 px-7 py-3 inset-0 bg-white/10 rounded-full -z-10"
+                        className="absolute -mt-0.5 -mx-2 px-7 py-3 inset-0 bg-white/10 rounded-full -z-10"
                         transition={{
                           type: "spring",
                           bounce: 0.2,
@@ -104,9 +117,10 @@ export default function Navbar() {
                 </Link>
               ))}
               <motion.button
+                onClick={() => router.push("/book-appointment")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="ml-4 px-6 py-2 bg-[#118c90] text-navy-900 rounded-full font-medium
+                className="ml-4 px-6 py-2 bg-[#118c90] text-white rounded-full font-medium
                   hover:bg-[#118c90] transition-colors duration-200 shadow-lg hover:shadow-[#118c90ae]"
               >
                 Book Now
@@ -172,7 +186,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.href.substring(1))}
                     className={`block px-4 py-2 text-lg rounded-lg transition-colors duration-200
                       ${
                         activeSection === item.name.toLowerCase()

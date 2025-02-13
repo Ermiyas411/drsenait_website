@@ -9,6 +9,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQs";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import JourneySection from "@/components/JourneySection";
+import DentalPainSection from "@/components/DentalPainSection";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <JourneySection />
+        <DentalPainSection />
         <About />
         <Services />
         <Testimonials />

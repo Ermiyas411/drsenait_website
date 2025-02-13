@@ -1,8 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center">
       {/* Background Image */}
@@ -46,9 +49,10 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <motion.button
+              onClick={() => router.push("/book-appointment")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#118c90] text-navy-900 px-8 py-4 rounded-full font-medium text-lg hover:bg-[#118c90] transition-colors"
+              className="bg-[#ffffff] text-[#118c90] px-8 py-4 rounded-full font-medium text-lg hover:bg-[#118c90] hover:text-white transition-colors"
             >
               Book Free Consultation
             </motion.button>

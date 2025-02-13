@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: "Sarah Johnson",
     role: "Marketing Executive",
-    image: "/testimonial-1.jpg",
+    image: "/profile2.jpg",
     content:
       "The level of care and professionalism at this dental practice is outstanding. The team made me feel comfortable throughout my entire treatment.",
     rating: 5,
@@ -16,7 +16,7 @@ const testimonials = [
   {
     name: "Michael Chen",
     role: "Software Engineer",
-    image: "/testimonial-2.jpg",
+    image: "/profile.jpg",
     content:
       "I've had a fear of dentists for years, but this team changed everything. Their gentle approach and modern facilities made all the difference.",
     rating: 5,
@@ -25,7 +25,7 @@ const testimonials = [
   {
     name: "Emma Williams",
     role: "Teacher",
-    image: "/testimonial-3.jpg",
+    image: "/profile3.jpg",
     content:
       "The results of my cosmetic dental work exceeded my expectations. I can't stop smiling now! Highly recommend their services.",
     rating: 5,

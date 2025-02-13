@@ -96,13 +96,6 @@ export default function About() {
                 >
                   Learn More
                 </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border-2 border-navy-900 text-navy-900 px-8 py-3 rounded-full font-medium hover:bg-navy-900/5 transition-colors"
-                >
-                  Watch Video
-                </motion.button>
               </div>
             </motion.div>
           </div>
