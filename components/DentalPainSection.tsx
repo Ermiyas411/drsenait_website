@@ -76,7 +76,7 @@ const DentalPainSection = () => {
               className="flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex-shrink-0 w-6 h-6 mt-1">
-                <CheckIcon className="w-5 h-5 text-blue-500" />
+                <CheckIcon className="w-5 h-5 text-[#118c90]" />
               </div>
               <p className="text-gray-700">{point}</p>
             </motion.div>
@@ -85,7 +85,7 @@ const DentalPainSection = () => {
 
         {/* Solution Statement */}
         <motion.div animate={pulseAnimation} className="text-center mb-8">
-          <h3 className="text-2xl md:text-3xl font-semibold text-blue-600 mb-4">
+          <h3 className="text-2xl md:text-3xl font-semibold text-[#118c90] mb-4">
             Don't let dental pain or fear control your life.
           </h3>
           <p className="text-xl text-gray-700">
@@ -104,16 +104,16 @@ const DentalPainSection = () => {
             relative
             px-8 py-4
             text-lg font-semibold text-white
-            bg-gradient-to-r from-blue-500 to-teal-400
+            bg-gradient-to-r from-[#118c90] to-teal-400
             rounded-full
             transform transition-all duration-300
-            hover:shadow-lg hover:from-blue-600 hover:to-teal-500
-            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+            hover:shadow-lg hover:from-[#118c90] hover:to-teal-500
+            focus:outline-none focus:ring-2 focus:ring-[#118c90] focus:ring-offset-2
           "
             onClick={() => router.push("/book-appointment")}
           >
             {/* Glow effect */}
-            <div className="absolute inset-0 rounded-full bg-blue-400 blur-md opacity-50 -z-10" />
+            <div className="absolute inset-0 rounded-full bg-[#118c90] blur-md opacity-50 -z-10" />
             BOOK A FREE PHONE CONSULT
             {/* Arrow icon */}
             <span className="ml-2 inline-block transform group-hover:translate-x-1 transition-transform">

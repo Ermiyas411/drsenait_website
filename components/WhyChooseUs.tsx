@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
 const features = [
@@ -55,6 +56,7 @@ const itemVariants = {
 
 export default function WhyChooseUs() {
   const ref = useRef(null);
+  const router = useRouter();
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
@@ -105,6 +107,34 @@ export default function WhyChooseUs() {
           ))}
         </motion.div>
       </div>
+      {/* CTA Button */}
+      <motion.div
+        className="text-center mt-14"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        <button
+          className="
+            relative
+            px-8 py-4
+            text-lg font-semibold text-white
+            bg-gradient-to-r from-[#118c90] to-teal-400
+            rounded-full
+            transform transition-all duration-300
+            hover:shadow-lg hover:from-[#118c90] hover:to-teal-500
+            focus:outline-none focus:ring-2 focus:ring-[#118c90] focus:ring-offset-2
+          "
+          onClick={() => router.push("/book-appointment")}
+        >
+          {/* Glow effect */}
+          <div className="absolute inset-0 rounded-full bg-[#118c90] blur-md opacity-50 -z-10" />
+          BOOK A FREE PHONE CONSULT
+          {/* Arrow icon */}
+          <span className="ml-2 inline-block transform group-hover:translate-x-1 transition-transform">
+            →
+          </span>
+        </button>
+      </motion.div>
     </section>
   );
 }

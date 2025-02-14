@@ -9,7 +9,7 @@ const JourneySection = () => {
   const steps = [
     {
       number: "01",
-      title: "Book Your Free Phone Consult",
+      title: "Book Your Appointment in Just 60 Seconds.",
       icon: "📞",
       description:
         "Schedule your free consultation with our expert team and take the first step towards pain-free living.",
@@ -19,7 +19,7 @@ const JourneySection = () => {
     },
     {
       number: "02",
-      title: "Work With Our Doctors of Physical Therapy",
+      title: "Meet Our Expert Dental Team and Get Personalized Care.",
       icon: "🩺",
       description:
         "Get personalized treatment from our experienced doctors who understand your unique needs.",
@@ -29,8 +29,8 @@ const JourneySection = () => {
     },
     {
       number: "03",
-      title: "Never Worry About Pain Again",
-      icon: "✅",
+      title: "Enjoy a Healthy, Confident Smile for Life!",
+      icon: "😁",
       description:
         "Experience lasting relief and learn techniques to maintain your pain-free lifestyle.",
       delay: 0.6,
