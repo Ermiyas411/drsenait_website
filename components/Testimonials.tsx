@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import GoogleReview from "./GoogleReview";
 
 const testimonials = [
   {
@@ -72,7 +73,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
+        {/* <div className="max-w-6xl mx-auto">
           <div className="relative">
             <AnimatePresence mode="wait">
               {testimonials.map(
@@ -87,7 +88,6 @@ export default function Testimonials() {
                       className="bg-white rounded-2xl shadow-2xl overflow-hidden"
                     >
                       <div className="grid grid-cols-1 lg:grid-cols-2">
-                        {/* Image Section */}
                         <div className="relative h-64 lg:h-full min-h-[400px]">
                           <Image
                             src={testimonial.image}
@@ -109,7 +109,6 @@ export default function Testimonials() {
                           </motion.div>
                         </div>
 
-                        {/* Content Section */}
                         <div className="p-8 lg:p-12">
                           <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -185,7 +184,6 @@ export default function Testimonials() {
               )}
             </AnimatePresence>
 
-            {/* Navigation Arrows */}
             <div className="absolute top-[40%] -translate-y-1/2 left-0 right-0 flex justify-between pointer-events-none px-4 -mt-10 md:-mt-16">
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -238,7 +236,8 @@ export default function Testimonials() {
               </motion.button>
             </div>
           </div>
-        </div>
+        </div> */}
+        <GoogleReview />
       </div>
 
       {/* New Animated Call-to-Action Section */}

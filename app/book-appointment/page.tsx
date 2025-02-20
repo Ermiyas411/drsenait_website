@@ -270,7 +270,7 @@ export default function BookAppointment() {
             <p className="mt-1 text-xs">
               Designed & Developed by{" "}
               <a
-                href="https://www.linkedin.com/in/yohannes-tezera-0b6b83196/"
+                href="https://et.linkedin.com/in/ermiyas-kerebih-918464279"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#118c90] hover:text-[#0e7578] transition-colors"

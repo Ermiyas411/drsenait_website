@@ -7,11 +7,12 @@ import { useRouter } from "next/navigation";
 import { smoothScroll } from "@/utils/smoothScroll";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "FAQ", href: "#faq" },
+  { name: "Our Team", href: "/our-team" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 10);
 
       // Update active section based on scroll position
       const sections = navItems.map((item) =>
@@ -61,101 +62,70 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed w-full z-50 transition-all duration-500 ${
+        className={`fixed w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-navy-900/95 backdrop-blur-lg shadow-lg"
+            ? "bg-white/80 backdrop-blur-lg shadow-lg"
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link href="/" className="relative group">
-              <motion.div
-                className="text-2xl  text-white font-bold flex items-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Image src="/logo.png" alt="logo" width={150} height={150} />
-                <motion.div
-                  className="absolute -bottom-2 left-0 w-0 h-0.5 bg-[#118c90] group-hover:w-full transition-all duration-300"
-                  layoutId="underline"
-                />
-              </motion.div>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={150}
+                height={40}
+                className="h-10 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href.substring(1))}
-                  className="relative px-4 py-2 group"
+                  className={`text-sm font-medium transition-colors duration-300 ${
+                    isScrolled
+                      ? "text-gray-900 hover:text-[#118c90]"
+                      : "text-white hover:text-[#118c90]"
+                  }`}
                 >
-                  <motion.span
-                    className={`relative z-10 text-sm font-medium transition-colors duration-200
-                      ${
-                        activeSection === item.name.toLowerCase()
-                          ? "text-[#118c90]"
-                          : "text-white group-hover:text-[#118c90]"
-                      }`}
-                  >
-                    {item.name}
-                    {activeSection === item.name.toLowerCase() && (
-                      <motion.div
-                        layoutId="navbar-active"
-                        className="absolute -mt-0.5 -mx-2 px-7 py-3 inset-0 bg-white/10 rounded-full -z-10"
-                        transition={{
-                          type: "spring",
-                          bounce: 0.2,
-                          duration: 0.6,
-                        }}
-                      />
-                    )}
-                  </motion.span>
+                  {item.name}
                 </Link>
               ))}
-              <motion.button
-                onClick={() => router.push("/book-appointment")}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-4 px-6 py-2 bg-[#118c90] text-white rounded-full font-medium
-                  hover:bg-[#118c90] transition-colors duration-200 shadow-lg hover:shadow-[#118c90ae]"
+              <Link
+                href="/book-appointment"
+                className="px-4 py-2 rounded-full bg-[#118c90] text-white text-sm font-medium 
+                         hover:bg-[#0d6d70] transition-colors duration-300"
               >
-                Book Now
-              </motion.button>
+                Book Appointment
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
-            <motion.button
-              whileTap={{ scale: 0.95 }}
+            <button
+              className="md:hidden text-gray-500 hover:text-gray-700"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden w-10 h-10 flex items-center justify-center text-white focus:outline-none"
             >
-              <div className="relative w-6 h-5">
-                <motion.span
-                  animate={{
-                    rotate: isMobileMenuOpen ? 45 : 0,
-                    y: isMobileMenuOpen ? 8 : 0,
-                  }}
-                  className="absolute w-full h-0.5 bg-white rounded-full transform transition-all duration-300"
-                />
-                <motion.span
-                  animate={{
-                    opacity: isMobileMenuOpen ? 0 : 1,
-                  }}
-                  className="absolute w-full h-0.5 bg-white rounded-full top-2 transform transition-all duration-300"
-                />
-                <motion.span
-                  animate={{
-                    rotate: isMobileMenuOpen ? -45 : 0,
-                    y: isMobileMenuOpen ? -8 : 16,
-                  }}
-                  className="absolute w-full h-0.5 bg-white rounded-full bottom-0 transform transition-all duration-300"
-                />
-              </div>
-            </motion.button>
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMobileMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
       </motion.nav>
@@ -164,51 +134,30 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed top-20 left-0 right-0 z-40 bg-navy-900/95 backdrop-blur-lg md:hidden overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden bg-white shadow-lg rounded-b-2xl"
           >
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="container mx-auto px-4 py-6 space-y-4"
-            >
-              {navItems.map((item, index) => (
-                <motion.div
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navItems.map((item) => (
+                <Link
                   key={item.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  href={item.href}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-[#118c90] hover:bg-gray-50"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Link
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href.substring(1))}
-                    className={`block px-4 py-2 text-lg rounded-lg transition-colors duration-200
-                      ${
-                        activeSection === item.name.toLowerCase()
-                          ? "text-[#118c90] bg-white/10"
-                          : "text-white hover:text-[#118c90] hover:bg-white/5"
-                      }`}
-                  >
-                    {item.name}
-                  </Link>
-                </motion.div>
+                  {item.name}
+                </Link>
               ))}
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navItems.length * 0.1 }}
-                className="w-full px-6 py-3 bg-[#118c90] text-navy-900 rounded-lg font-medium
-                  hover:bg-[#118c90] transition-colors duration-200"
-                onClick={() => router.push("/book-appointment")}
+              <Link
+                href="/book-appointment"
+                className="block px-3 py-2 rounded-md text-base font-medium text-white bg-[#118c90] hover:bg-[#0d6d70]"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Book Appointment
-              </motion.button>
-            </motion.div>
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
