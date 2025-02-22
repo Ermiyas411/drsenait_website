@@ -89,13 +89,13 @@ export default function About() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button
+                {/* <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-navy-900 text-white px-8 py-3 rounded-full font-medium hover:bg-navy-800 transition-colors"
                 >
                   Learn More
-                </motion.button>
+                </motion.button> */}
               </div>
             </motion.div>
           </div>

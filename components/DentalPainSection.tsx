@@ -47,6 +47,13 @@ const DentalPainSection = () => {
     },
   };
 
+  const handleBookingClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSea1gDqkKdokPKkAwYe_-1PKHg0D6RxwftK9RLvysXCNBCbwg/viewform?usp=dialog",
+      "_blank"
+    );
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,7 +117,7 @@ const DentalPainSection = () => {
             hover:shadow-lg hover:from-[#118c90] hover:to-teal-500
             focus:outline-none focus:ring-2 focus:ring-[#118c90] focus:ring-offset-2
           "
-            onClick={() => router.push("/book-appointment")}
+            onClick={() => handleBookingClick()}
           >
             {/* Glow effect */}
             <div className="absolute inset-0 rounded-full bg-[#118c90] blur-md opacity-50 -z-10" />

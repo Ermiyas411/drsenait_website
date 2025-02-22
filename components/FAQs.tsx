@@ -145,6 +145,13 @@ const FAQItem = ({
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const handleBookingClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSea1gDqkKdokPKkAwYe_-1PKHg0D6RxwftK9RLvysXCNBCbwg/viewform?usp=dialog",
+      "_blank"
+    );
+  };
+
   return (
     <section id="faq" className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
@@ -227,9 +234,7 @@ export default function FAQ() {
                 scale: 1.05,
                 boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1)",
               }}
-              onClick={() => {
-                window.location.href = "#contact";
-              }}
+              onClick={() => handleBookingClick()}
               whileTap={{ scale: 0.95 }}
               className="relative bg-gradient-to-r from-[#118c90] to-[#0e7073] text-navy-900 
                 px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-[#118c90]/50 

@@ -8,6 +8,13 @@ export default function Hero() {
   const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const handleBookingClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSea1gDqkKdokPKkAwYe_-1PKHg0D6RxwftK9RLvysXCNBCbwg/viewform?usp=dialog",
+      "_blank"
+    );
+  };
+
   // Image carousel configuration
   const carouselImages = [
     {
@@ -293,7 +300,7 @@ export default function Hero() {
               className="px-8 py-4 rounded-full bg-white text-[#118c90] font-semibold text-lg 
                         hover:bg-[#0e7476] hover:text-white transition-colors duration-300 
                         shadow-lg hover:shadow-xl hover:shadow-[#118c90]/20"
-              onClick={() => router.push("/book-appointment")}
+              onClick={() => handleBookingClick()}
             >
               Book Free Consultation
             </motion.button>
@@ -362,7 +369,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-14 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
           animate={{
