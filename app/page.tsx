@@ -9,6 +9,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import JourneySection from "@/components/JourneySection";
 import DentalPainSection from "@/components/DentalPainSection";
 import Navbar from "@/components/Navbar";
+import OurTeam from "@/components/OurTeam";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <JourneySection />
         <DentalPainSection />
         <About />
+        <OurTeam />
         <Services />
         <Testimonials />
         <WhyChooseUs />

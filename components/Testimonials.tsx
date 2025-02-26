@@ -73,7 +73,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto mb-16">
           <div className="relative">
             <AnimatePresence mode="wait">
               {testimonials.map(
@@ -236,7 +236,22 @@ export default function Testimonials() {
               </motion.button>
             </div>
           </div>
-        </div> */}
+        </div>
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our <span className="text-[#118c90]">Google Reviews</span>
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              See what our patients are saying about us on Google
+            </p>
+          </motion.div>
+        </div>
         <GoogleReview />
       </div>
 
