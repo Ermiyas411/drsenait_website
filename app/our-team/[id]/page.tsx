@@ -22,7 +22,7 @@ export default function DoctorProfile() {
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <Link
-          href="/our-team"
+          href="/"
           className="text-white hover:text-[#118c90] transition-colors mb-8 inline-block"
         >
           ← Back to Team
