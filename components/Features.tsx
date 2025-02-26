@@ -75,7 +75,7 @@ export default function Services() {
                 {service.title}
               </h3>
               <p className="text-gray-300">{service.description}</p>
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="mt-6 text-[#118c90] font-medium flex items-center group"
@@ -94,7 +94,7 @@ export default function Services() {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </motion.button>
+              </motion.button> */}
             </motion.div>
           ))}
         </div>

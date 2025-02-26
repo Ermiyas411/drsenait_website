@@ -16,7 +16,7 @@ export default function About() {
             className="relative h-[600px] rounded-2xl overflow-hidden"
           >
             <Image
-              src="/banner2.jpg"
+              src="/banner/banner2.jpg"
               alt="Modern Dental Practice"
               fill
               className="object-cover"
