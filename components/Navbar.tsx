@@ -37,7 +37,9 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled ? "bg-white/90 backdrop-blur-lg shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-navy-900/90 backdrop-blur-lg shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,7 +64,7 @@ export default function Navbar() {
                 className={`text-sm font-medium transition-all duration-300 
                   ${
                     isScrolled
-                      ? "text-gray-900 hover:text-[#118c90]"
+                      ? "text-white hover:text-[#118c90]"
                       : "text-white hover:text-[#118c90]"
                   }
                   relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px]
